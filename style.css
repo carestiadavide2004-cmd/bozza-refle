@@ -388,8 +388,13 @@ body.menu-open .site-menu__aside { opacity: 1; transition-delay: .45s; }
 .hero__img.hero__img--soft {
   filter: blur(9px) saturate(.8) brightness(.8);
   transform: scale(1.04);
-  -webkit-mask-image: radial-gradient(ellipse 42% 50% at 50% 30%, #000 55%, transparent 100%);
-  mask-image: radial-gradient(ellipse 42% 50% at 50% 30%, #000 55%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 16%, transparent 25%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 16%, transparent 25%);
+}
+/* schermi molto larghi: il logo dello schermo è già fuori inquadratura
+   e i volti salgono in alto, quindi niente sfocatura (resta il velo scuro) */
+@media (min-aspect-ratio: 17/10) {
+  .hero__img.hero__img--soft { display: none; }
 }
 
 .hero__veil {
@@ -479,8 +484,8 @@ body.menu-open .site-menu__aside { opacity: 1; transition-delay: .45s; }
       radial-gradient(ellipse 120% 70% at 50% 50%, transparent 40%, rgba(23, 21, 21, .4) 100%);
   }
   .hero__img.hero__img--soft {
-    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 66%, transparent 78%);
-    mask-image: linear-gradient(to bottom, #000 0%, #000 66%, transparent 78%);
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 46%, transparent 53%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 46%, transparent 53%);
   }
 }
 
