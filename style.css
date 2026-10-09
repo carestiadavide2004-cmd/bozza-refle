@@ -474,7 +474,8 @@ body.menu-open .site-menu__aside { opacity: 1; transition-delay: .45s; }
   .hero__content {
     grid-template-rows: auto 1fr;
     align-content: stretch;
-    padding: calc(var(--header-h) + env(safe-area-inset-top) + .25rem) var(--gutter) 38svh;
+    /* le icone social occupano lo spazio sotto i pulsanti: frase e pulsanti restano dov'erano */
+    padding: calc(var(--header-h) + env(safe-area-inset-top) + .25rem) var(--gutter) calc(38svh - 4.15rem);
   }
   .hero__logo { height: clamp(6.5rem, 17vh, 10rem); }
   .hero__bottom { align-self: end; }
@@ -1380,6 +1381,33 @@ body.menu-open .site-menu__aside { opacity: 1; transition-delay: .45s; }
 .social-btns .btn { width: 100%; }
 @media (max-width: 520px) {
   .social-btns { width: 100%; }
+}
+
+/* ---------- Icone social: barra (computer) e hero (telefono) ---------- */
+
+.header-social,
+.hero-social { display: flex; align-items: center; }
+.header-social a,
+.hero-social a {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.75rem;
+  color: inherit;
+  opacity: .85;
+  transition: opacity .3s var(--ease-soft);
+}
+.header-social a:hover,
+.hero-social a:hover { opacity: 1; }
+.social-icon { width: 1.05rem; height: 1.05rem; fill: currentColor; }
+.social-icon--ig { fill: none; stroke: currentColor; stroke-width: 1.6; }
+.social-icon--ig .ig-dot { fill: currentColor; stroke: none; }
+
+.header-social { margin-right: -.25rem; }
+.hero-social { display: none; justify-content: center; gap: .5rem; margin-top: -.5rem; animation: fadeUp 1.4s var(--ease) 1.4s both; }
+@media (max-width: 699px) {
+  .header-social { display: none; }
+  .hero-social { display: flex; }
 }
 
 /* ---------- Cursore personalizzato ---------- */
