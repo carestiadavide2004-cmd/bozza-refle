@@ -46,7 +46,11 @@ button { font: inherit; color: inherit; }
 address { font-style: normal; }
 figure { margin: 0; }
 
-section[id] { scroll-margin-top: 0; }
+section[id] { scroll-margin-top: calc(var(--header-h) + env(safe-area-inset-top)); }
+#home { scroll-margin-top: 0; }
+@media (max-width: 699px) {
+  section[id] { scroll-margin-top: calc(3.6rem + env(safe-area-inset-top)); }
+}
 
 :focus-visible {
   outline: 1.5px solid currentColor;
@@ -148,7 +152,10 @@ section[id] { scroll-margin-top: 0; }
 
 .site-header {
   position: fixed;
-  inset: 0 0 auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
   z-index: 100;
   height: calc(var(--header-h) + env(safe-area-inset-top));
   padding: env(safe-area-inset-top) var(--gutter) 0;
@@ -156,10 +163,12 @@ section[id] { scroll-margin-top: 0; }
   align-items: center;
   justify-content: space-between;
   color: var(--avorio);
-  transition: background-color .5s var(--ease-soft), color .5s var(--ease-soft), box-shadow .5s var(--ease-soft), transform .5s var(--ease);
+  transform: translateY(0);
+  transition: background-color .5s var(--ease-soft), color .5s var(--ease-soft), box-shadow .5s var(--ease-soft), transform .45s var(--ease), height .35s var(--ease);
 }
+.site-header.is-hidden { transform: translateY(-100%); }
 .site-header.is-solid {
-  background: rgba(248, 245, 240, .94);
+  background: rgba(248, 245, 240, .9);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   color: var(--nero);
@@ -172,7 +181,13 @@ body.menu-open .site-header {
   transform: none;
 }
 
-.brand { position: relative; display: block; height: 2.9rem; aspect-ratio: 1184 / 1375; }
+.brand { position: relative; display: block; height: 2.9rem; aspect-ratio: 1184 / 1375; transition: height .35s var(--ease); }
+
+/* telefono: barra compatta (circa 58px + safe area) mentre si scorre */
+@media (max-width: 699px) {
+  .site-header.is-solid { height: calc(3.6rem + env(safe-area-inset-top)); }
+  .site-header.is-solid .brand { height: 2.25rem; }
+}
 .brand__logo {
   position: absolute;
   inset: 0;
@@ -367,12 +382,23 @@ body.menu-open .site-menu__aside { opacity: 1; transition-delay: .45s; }
   opacity: .55;
 }
 
+/* copia sfocata della foto, visibile solo dietro logo e frase:
+   lo schermo con logo e frase stampati non si legge più,
+   le modelle in basso restano nitide */
+.hero__img.hero__img--soft {
+  filter: blur(9px) saturate(.8) brightness(.8);
+  transform: scale(1.04);
+  -webkit-mask-image: radial-gradient(ellipse 42% 50% at 50% 30%, #000 55%, transparent 100%);
+  mask-image: radial-gradient(ellipse 42% 50% at 50% 30%, #000 55%, transparent 100%);
+}
+
 .hero__veil {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 75% 60% at 50% 45%, rgba(23, 21, 21, .5) 0%, rgba(23, 21, 21, .5) 50%, rgba(23, 21, 21, .8) 100%),
-    linear-gradient(to top, rgba(23, 21, 21, .92) 0%, rgba(23, 21, 21, .45) 32%, rgba(23, 21, 21, .1) 60%, rgba(23, 21, 21, .35) 100%);
+    radial-gradient(ellipse 46% 42% at 50% 38%, rgba(23, 21, 21, .62) 0%, rgba(23, 21, 21, .4) 55%, rgba(23, 21, 21, 0) 100%),
+    radial-gradient(ellipse 75% 60% at 50% 45%, rgba(23, 21, 21, .32) 0%, rgba(23, 21, 21, .38) 55%, rgba(23, 21, 21, .7) 100%),
+    linear-gradient(to top, rgba(23, 21, 21, .45) 0%, rgba(23, 21, 21, .15) 30%, rgba(23, 21, 21, 0) 55%, rgba(23, 21, 21, .3) 100%);
 }
 
 .hero__grain {
@@ -443,14 +469,18 @@ body.menu-open .site-menu__aside { opacity: 1; transition-delay: .45s; }
   .hero__content {
     grid-template-rows: auto 1fr;
     align-content: stretch;
-    padding: calc(var(--header-h) + env(safe-area-inset-top) + .5rem) var(--gutter) 35svh;
+    padding: calc(var(--header-h) + env(safe-area-inset-top) + .25rem) var(--gutter) 38svh;
   }
   .hero__logo { height: clamp(6.5rem, 17vh, 10rem); }
   .hero__bottom { align-self: end; }
   .hero__veil {
     background:
-      linear-gradient(to bottom, rgba(23, 21, 21, .75) 0%, rgba(23, 21, 21, .5) 28%, rgba(23, 21, 21, .66) 48%, rgba(23, 21, 21, .92) 100%),
-      radial-gradient(ellipse 120% 70% at 50% 50%, transparent 40%, rgba(23, 21, 21, .5) 100%);
+      linear-gradient(to bottom, rgba(23, 21, 21, .72) 0%, rgba(23, 21, 21, .62) 22%, rgba(23, 21, 21, .7) 48%, rgba(23, 21, 21, .25) 72%, rgba(23, 21, 21, .3) 100%),
+      radial-gradient(ellipse 120% 70% at 50% 50%, transparent 40%, rgba(23, 21, 21, .4) 100%);
+  }
+  .hero__img.hero__img--soft {
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 66%, transparent 78%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 66%, transparent 78%);
   }
 }
 

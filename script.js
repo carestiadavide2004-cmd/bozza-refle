@@ -31,10 +31,25 @@
   var header = $('#site-header');
   var hero = $('#home');
 
+  var lastScrollY = window.scrollY;
+
   function updateHeader() {
+    var y = window.scrollY;
     // diventa chiaro quando arriva alla sfumatura avorio in fondo all'hero (ultimo 18%)
     var heroEnd = hero.offsetHeight * 0.82 - header.offsetHeight;
-    header.classList.toggle('is-solid', window.scrollY > heroEnd);
+    header.classList.toggle('is-solid', y > heroEnd);
+
+    // telefono: si nasconde scorrendo in giù, ricompare scorrendo in su
+    var phone = window.innerWidth < 700;
+    var delta = y - lastScrollY;
+    if (!phone || y <= heroEnd || body.classList.contains('menu-open')) {
+      header.classList.remove('is-hidden');
+    } else if (delta > 6) {
+      header.classList.add('is-hidden');
+    } else if (delta < -6) {
+      header.classList.remove('is-hidden');
+    }
+    if (Math.abs(delta) > 6) lastScrollY = y;
   }
 
   var toggle = $('#menu-toggle');
