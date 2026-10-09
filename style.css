@@ -1363,6 +1363,25 @@ body.menu-open .site-menu__aside { opacity: 1; transition-delay: .45s; }
 }
 .checkout__actions { display: grid; gap: .75rem; }
 
+/* ---------- Instagram ---------- */
+
+.ig-icon { fill: none; stroke: currentColor; stroke-width: 1.6; }
+.ig-icon .ig-dot { fill: currentColor; stroke: none; }
+.btn .ig-icon { width: 1.05rem; height: 1.05rem; fill: none; }
+.ig-link .ig-icon {
+  display: inline-block;
+  width: .95em;
+  height: .95em;
+  margin-right: .35em;
+  vertical-align: -.12em;
+}
+/* i due pulsanti hanno sempre la stessa larghezza */
+.social-btns { display: grid; gap: .75rem; width: max-content; max-width: 100%; }
+.social-btns .btn { width: 100%; }
+@media (max-width: 520px) {
+  .social-btns { width: 100%; }
+}
+
 /* ---------- Cursore personalizzato ---------- */
 
 .cursor { display: none; }
