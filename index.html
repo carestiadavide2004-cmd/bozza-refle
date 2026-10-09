@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <title>REFLÈ – Abbigliamento Donna · Scafa (PE)</title>
+  <meta name="description" content="REFLÈ, boutique di abbigliamento donna a Scafa (PE), Corso 1º Maggio 73/75. Femminilità, eleganza e personalità.">
+  <meta name="theme-color" content="#171515">
+  <link rel="icon" type="image/png" href="img/logo-nero.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="img/sfilata.jpg" fetchpriority="high">
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+
+  <a class="skip-link" href="#riflessi">Salta al contenuto</a>
+
+  <!-- ============ NAVIGAZIONE ============ -->
+  <header class="site-header" id="site-header">
+    <a class="brand" href="#home" aria-label="REFLÈ, torna all'inizio">
+      <img class="brand__logo brand__logo--light" src="img/logo-bianco.png" alt="" width="1184" height="1375">
+      <img class="brand__logo brand__logo--dark" src="img/logo-nero.png" alt="" width="1184" height="1375">
+    </a>
+
+    <div class="site-header__end">
+      <a class="header-catalog" href="#catalogo">Catalogo</a>
+      <button class="cart-toggle" type="button" data-open-cart aria-label="Carrello, 0 articoli">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 12.2a1 1 0 0 1-1 .8H7.2a1 1 0 0 1-1-.8L5 8Z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg>
+        <span class="cart-count" data-cart-count aria-hidden="true">0</span>
+      </button>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+        <span class="sr-only" id="menu-toggle-label">Apri il menu</span>
+        <span class="menu-toggle__bars" aria-hidden="true"><i></i><i></i><i></i></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="site-menu" id="site-menu" aria-label="Menu principale">
+    <div class="site-menu__inner">
+      <ul class="site-menu__list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#riflessi">Riflessi</a></li>
+        <li><a href="#catalogo">Catalogo</a></li>
+        <li><a href="#mondo">Il mondo Reflè</a></li>
+        <li><a href="#collezione">Collezione</a></li>
+        <li><a href="#eventi">Eventi</a></li>
+        <li><a href="#contatti">Contatti</a></li>
+      </ul>
+      <div class="site-menu__aside">
+        <p>Corso 1º Maggio, 73/75<br>65027 Scafa (PE)</p>
+        <p><a href="tel:+393402365315">340 236 5315</a></p>
+        <p><a href="https://www.facebook.com/profile.php?id=61572524583037" target="_blank" rel="noopener">Facebook</a></p>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" data-cursor-light id="home" aria-labelledby="hero-title">
+      <div class="hero__media">
+        <img class="hero__img" src="img/sfilata.jpg" alt="Le modelle di REFLÈ applaudono sul palco durante una sfilata serale." width="1066" height="1332" fetchpriority="high" decoding="async">
+      </div>
+      <div class="hero__tint" aria-hidden="true"></div>
+      <div class="hero__veil" aria-hidden="true"></div>
+      <div class="hero__grain" aria-hidden="true"></div>
+      <div class="hero__blend" aria-hidden="true"></div>
+
+      <div class="hero__content" data-parallax-content>
+        <img class="hero__logo" src="img/logo-bianco.png" alt="REFLÈ" width="1184" height="1375">
+        <div class="hero__bottom">
+          <h1 class="hero__title" id="hero-title">L’abito giusto chiama il tuo nome</h1>
+          <div class="hero__actions">
+            <a class="btn btn--light-solid" data-cursor-dark href="#catalogo">Scopri il catalogo</a>
+            <a class="btn btn--light" href="#contatti">Vieni a trovarci</a>
+          </div>
+        </div>
+      </div>
+
+      <a class="scroll-cue" data-cursor-dark href="#riflessi" aria-label="Scorri alla sezione successiva">
+        <span class="scroll-cue__track" aria-hidden="true"><span class="scroll-cue__dot"></span></span>
+      </a>
+    </section>
+
+    <!-- ============ RIFLESSI (sezione scenografica) ============ -->
+    <section class="riflessi" id="riflessi" aria-label="Riflessi">
+      <article class="riflesso" data-slide="left">
+        <figure class="riflesso__photo" data-slide-photo>
+          <div class="frame frame--tall" style="--x: 100%; --y: 15.5%; --z: 1.91">
+            <img data-slide-img src="img/abito-specchio.jpg" alt="Una cliente in abito lungo fucsia si riflette nello specchio del camerino." width="1080" height="1350" loading="lazy" decoding="async">
+          </div>
+        </figure>
+        <p class="riflesso__text" data-slide-text>Ogni donna ha una storia da raccontare.</p>
+      </article>
+
+      <article class="riflesso riflesso--right" data-slide="right">
+        <figure class="riflesso__photo" data-slide-photo>
+          <div class="frame frame--tall" style="--x: 100%; --y: 57%; --z: 1.75">
+            <img data-slide-img src="img/negozio-stender.jpg" alt="Una ragazza sceglie un capo tra gli appendiabiti del negozio." width="1080" height="1350" loading="lazy" decoding="async">
+          </div>
+        </figure>
+        <p class="riflesso__text" data-slide-text>Il tuo stile è il modo in cui scegli di farlo.</p>
+      </article>
+
+      <article class="riflesso" data-slide="left">
+        <figure class="riflesso__photo" data-slide-photo>
+          <div class="frame frame--tall" style="--x: 33.3%; --y: 33.3%; --z: 1.6">
+            <img data-slide-img src="img/nuove/negozio-salottino-divano-rosa.jpg" alt="Il salottino del negozio: specchio ad arco, tende chiare e il divano rosa." width="1200" height="1200" loading="lazy" decoding="async">
+          </div>
+        </figure>
+        <p class="riflesso__text" data-slide-text>Il tuo stile. La tua storia. Reflè.</p>
+      </article>
+    </section>
+
+    <!-- ============ CATALOGO ============ -->
+    <section class="catalogo" id="catalogo" aria-labelledby="catalogo-title">
+      <header class="catalogo__head">
+        <h2 class="display reveal-title" id="catalogo-title">
+          <span class="line"><span>Scopri il nostro</span></span>
+          <span class="line"><span><em>catalogo.</em></span></span>
+        </h2>
+        <p class="catalogo__intro reveal">Quattro mondi, un solo filo: sentirti te stessa. Scegli una vetrina.</p>
+      </header>
+
+      <ul class="vetrine">
+        <li class="reveal">
+          <button class="vetrina" type="button" data-category="sera">
+            <span class="vetrina__img"><img src="img/catalogo/sera-plisse.jpg" alt="" width="800" height="1000" loading="lazy" decoding="async"></span>
+            <span class="vetrina__label">
+              <span class="vetrina__name">Cerimonia &amp; sera</span>
+              <span class="vetrina__more">Vedi i 6 capi</span>
+            </span>
+          </button>
+        </li>
+        <li class="reveal">
+          <button class="vetrina" type="button" data-category="tailleur">
+            <span class="vetrina__img"><img src="img/catalogo/tailleur-1.jpg" alt="" width="800" height="1000" loading="lazy" decoding="async"></span>
+            <span class="vetrina__label">
+              <span class="vetrina__name">Tailleur &amp; completi</span>
+              <span class="vetrina__more">Vedi i 6 capi</span>
+            </span>
+          </button>
+        </li>
+        <li class="reveal">
+          <button class="vetrina" type="button" data-category="giorno">
+            <span class="vetrina__img"><img src="img/catalogo/giorno-3.jpg" alt="" width="800" height="1000" loading="lazy" decoding="async"></span>
+            <span class="vetrina__label">
+              <span class="vetrina__name">Giorno</span>
+              <span class="vetrina__more">Vedi i 6 capi</span>
+            </span>
+          </button>
+        </li>
+        <li class="reveal">
+          <button class="vetrina" type="button" data-category="accessori">
+            <span class="vetrina__img"><img src="img/catalogo/accessori-2.jpg" alt="" width="800" height="1000" loading="lazy" decoding="async"></span>
+            <span class="vetrina__label">
+              <span class="vetrina__name">Accessori</span>
+              <span class="vetrina__more">Vedi i 6 capi</span>
+            </span>
+          </button>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============ IL MONDO REFLÈ ============ -->
+    <section class="mondo" data-cursor-light id="mondo" aria-labelledby="mondo-title">
+      <div class="mondo__media" aria-hidden="true">
+        <img data-mondo-img src="img/hero-fondatrici.jpg" alt="" width="1942" height="809" loading="lazy" decoding="async">
+      </div>
+      <div class="mondo__shade" aria-hidden="true"></div>
+      <div class="mondo__fade" aria-hidden="true"></div>
+
+      <div class="mondo__text" data-mondo-text>
+        <h2 class="mondo__title" id="mondo-title">
+          <span class="mondo__line">Non è solo</span>
+          <span class="mondo__line"><em>questione</em></span>
+          <span class="mondo__line"><em>di stile.</em></span>
+        </h2>
+        <div class="mondo__prose">
+          <p>È sentirsi bene nei propri panni.<br>
+            È riconoscersi allo specchio.<br>
+            È trovare quell’abito che racconta qualcosa di te, senza bisogno di parole.</p>
+          <p>Reflè è uno spazio dedicato alla femminilità, alla personalità e alla libertà di esprimere il proprio stile.</p>
+        </div>
+        <p class="sr-only">Sullo sfondo, le titolari di REFLÈ sedute sul divano rosa del negozio.</p>
+      </div>
+    </section>
+
+    <!-- ============ COLLEZIONE: TROVA IL TUO MODO DI ESSERE ============ -->
+    <section class="stile" id="collezione" aria-labelledby="stile-title">
+      <header class="stile__head">
+        <h2 class="display reveal-title" id="stile-title">
+          <span class="line"><span>Trova il tuo</span></span>
+          <span class="line"><span><em>modo di essere.</em></span></span>
+        </h2>
+      </header>
+
+      <div class="stile__board">
+        <p class="stile__quote stile__quote--1 reveal">Ogni giorno, una nuova versione di te.</p>
+        <p class="stile__quote stile__quote--2 reveal">Il tuo stile non ha bisogno di permesso.</p>
+        <p class="stile__quote stile__quote--3 reveal">Indossa ciò che ti rappresenta.</p>
+      </div>
+    </section>
+
+    <!-- ============ EVENTI E COMMUNITY ============ -->
+    <section class="eventi" data-cursor-light id="eventi" aria-labelledby="eventi-title">
+      <div class="eventi__text">
+        <h2 class="display display--light reveal-title" id="eventi-title">
+          <span class="line"><span>Molto più</span></span>
+          <span class="line"><span><em>di un abito.</em></span></span>
+        </h2>
+        <div class="eventi__side reveal">
+          <p class="eventi__lead">Ci sono momenti in cui lo stile diventa condivisione, emozione e libertà di essere sé stesse.</p>
+          <a class="btn btn--light" href="https://www.facebook.com/profile.php?id=61572524583037" target="_blank" rel="noopener">Seguici su Facebook</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ VISITA IL NEGOZIO ============ -->
+    <section class="visita" id="contatti" aria-labelledby="visita-title">
+      <div class="visita__inner">
+        <h2 class="display display--xl reveal-title" id="visita-title">
+          <span class="line"><span>Il tuo prossimo abito</span></span>
+          <span class="line"><span><em>ti aspetta.</em></span></span>
+        </h2>
+
+        <div class="visita__body">
+          <div class="visita__info">
+            <p class="visita__lead reveal">Vieni a scoprire Reflè e lasciati ispirare.</p>
+
+            <address class="visita__card reveal">
+              <strong class="visita__name">REFLÈ – Abbigliamento Donna</strong>
+              <span>Corso 1º Maggio, 73/75<br>65027 Scafa (PE)</span>
+              <span>Telefono: <a href="tel:+393402365315">340 236 5315</a></span>
+            </address>
+
+            <div class="visita__actions reveal">
+              <a class="btn btn--dark" href="https://www.google.com/maps/search/?api=1&amp;query=Refl%C3%A8%20Abbigliamento%20Donna%2C%20Corso%201%C2%BA%20Maggio%2073%2F75%2C%2065027%20Scafa%20PE" target="_blank" rel="noopener">Come raggiungerci</a>
+              <a class="btn btn--outline" href="tel:+393402365315">Contattaci</a>
+              <a class="btn btn--outline" href="https://wa.me/393402365315" target="_blank" rel="noopener">
+                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3Z"/></svg>
+                Scrivici su WhatsApp
+              </a>
+            </div>
+
+            <p class="visita__social reveal">Segui le novità su <a href="https://www.facebook.com/profile.php?id=61572524583037" target="_blank" rel="noopener">Facebook</a></p>
+          </div>
+
+          <div class="visita__map reveal">
+            <iframe title="Mappa: REFLÈ, Corso 1º Maggio 73, Scafa" src="https://www.google.com/maps?q=Corso+1+Maggio+73,+65027+Scafa+PE&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="site-footer__top">
+      <img class="site-footer__logo" src="img/logo-nero.png" alt="REFLÈ" width="1184" height="1375" loading="lazy">
+      <p class="site-footer__claim">Il tuo stile. La tua storia. Reflè.</p>
+    </div>
+
+    <div class="site-footer__cols">
+      <nav aria-label="Collegamenti del footer">
+        <ul class="site-footer__links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#catalogo">Catalogo</a></li>
+          <li><a href="#mondo">Il mondo Reflè</a></li>
+          <li><a href="#collezione">Collezione</a></li>
+          <li><a href="#eventi">Eventi</a></li>
+            <li><a href="#contatti">Contatti</a></li>
+        </ul>
+      </nav>
+      <p>REFLÈ – Abbigliamento Donna<br>Corso 1º Maggio, 73/75<br>65027 Scafa (PE)</p>
+      <p><a href="tel:+393402365315">340 236 5315</a><br>
+        <a href="https://www.facebook.com/profile.php?id=61572524583037" target="_blank" rel="noopener">Facebook</a></p>
+    </div>
+
+    <div class="site-footer__small">
+      <p>Bozza dimostrativa realizzata da Davide Carestia</p>
+      <p>I testi sono proposte editoriali per la demo. Foto del catalogo di esempio: Unsplash.</p>
+    </div>
+  </footer>
+
+  <!-- ============ CATEGORIA DEL CATALOGO ============ -->
+  <dialog class="shop" id="shop" aria-labelledby="shop-title">
+    <div class="shop__bar">
+      <button class="shop__back" type="button" data-close-shop>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4l-8 8 8 8"/></svg>
+        Indietro
+      </button>
+      <h2 class="shop__title" id="shop-title"></h2>
+      <button class="cart-toggle cart-toggle--dark" type="button" data-open-cart aria-label="Carrello, 0 articoli">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 12.2a1 1 0 0 1-1 .8H7.2a1 1 0 0 1-1-.8L5 8Z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg>
+        <span class="cart-count" data-cart-count aria-hidden="true">0</span>
+      </button>
+    </div>
+    <div class="shop__body">
+      <ul class="products" id="products"></ul>
+      <p class="shop__note">Prodotti e prezzi di esempio per la demo.</p>
+    </div>
+  </dialog>
+
+  <!-- ============ CARRELLO ============ -->
+  <dialog class="cart" id="cart" aria-labelledby="cart-title">
+    <div class="cart__panel">
+      <div class="cart__head">
+        <h2 class="cart__title" id="cart-title">Il tuo carrello</h2>
+        <button class="icon-btn" type="button" data-close-cart aria-label="Chiudi il carrello">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+        </button>
+      </div>
+      <p class="cart__added" id="cart-added" role="status" hidden></p>
+      <ul class="cart__list" id="cart-list"></ul>
+      <div class="cart__empty" id="cart-empty">
+        <p>Il carrello è vuoto.</p>
+        <button class="btn btn--outline" type="button" data-browse>Scopri il catalogo</button>
+      </div>
+      <div class="cart__foot" id="cart-foot">
+        <p class="cart__total"><span>Totale</span> <strong id="cart-total">0 €</strong></p>
+        <a class="btn btn--outline cart__wa" id="cart-wa" href="https://wa.me/393402365315" target="_blank" rel="noopener">Chiedi info su WhatsApp</a>
+        <button class="btn btn--dark" type="button" id="cart-buy">Acquista</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ============ RIEPILOGO ORDINE ============ -->
+  <dialog class="checkout" id="checkout" aria-labelledby="checkout-title">
+    <div class="checkout__box">
+      <button class="icon-btn checkout__close" type="button" data-close-checkout aria-label="Chiudi il riepilogo">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+      </button>
+      <img class="checkout__logo" src="img/logo-nero.png" alt="" width="1184" height="1375">
+      <h2 class="checkout__title" id="checkout-title">Riepilogo dell’ordine</h2>
+      <ul class="checkout__list" id="checkout-list"></ul>
+      <p class="checkout__total"><span>Totale</span> <strong id="checkout-total">0 €</strong></p>
+      <p class="checkout__msg">Il pagamento online sarà attivo nel sito ufficiale. Per ora potete scriverci su WhatsApp o passare in negozio.</p>
+      <div class="checkout__actions">
+        <a class="btn btn--dark" id="checkout-wa" href="https://wa.me/393402365315" target="_blank" rel="noopener">Scrivici su WhatsApp</a>
+        <button class="btn btn--outline" type="button" data-close-checkout>Torna al carrello</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <dialog class="lightbox" data-cursor-light id="lightbox" aria-label="Foto ingrandita">
+    <div class="lightbox__stage" id="lightbox-stage">
+      <figure class="lightbox__figure">
+        <div class="lightbox__frame" id="lightbox-frame">
+          <img id="lightbox-img" alt="">
+        </div>
+        <figcaption class="lightbox__caption">
+          <span id="lightbox-caption"></span>
+          <span class="lightbox__count" id="lightbox-count" aria-live="polite"></span>
+        </figcaption>
+      </figure>
+    </div>
+    <button class="lightbox__btn lightbox__btn--close" id="lightbox-close" type="button" aria-label="Chiudi">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+    <button class="lightbox__btn lightbox__btn--prev" id="lightbox-prev" type="button" aria-label="Foto precedente">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4l-8 8 8 8"/></svg>
+    </button>
+    <button class="lightbox__btn lightbox__btn--next" id="lightbox-next" type="button" aria-label="Foto successiva">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4l8 8-8 8"/></svg>
+    </button>
+  </dialog>
+
+  <!-- cursore personalizzato (solo con il mouse) -->
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <img class="cursor__logo cursor__logo--dark" src="img/logo-nero.png" alt="" width="1184" height="1375">
+    <img class="cursor__logo cursor__logo--light" src="img/logo-bianco.png" alt="" width="1184" height="1375">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
