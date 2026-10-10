@@ -457,8 +457,7 @@ body.menu-open .site-menu__aside { opacity: 1; transition-delay: .45s; }
 .hero__logo {
   width: auto;
   height: clamp(8rem, 24vh, 15rem);
-  filter: drop-shadow(0 6px 30px rgba(23, 21, 21, .35));
-  animation: logoIn 2.2s var(--ease) .25s both;
+  animation: logoIn 1.6s var(--ease) .25s both;
 }
 
 .hero__bottom {
@@ -545,7 +544,7 @@ body.menu-open .site-menu__aside { opacity: 1; transition-delay: .45s; }
 @media (max-height: 640px) { .scroll-cue { display: none; } }
 
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-@keyframes logoIn { from { opacity: 0; transform: scale(.9); filter: blur(6px) drop-shadow(0 6px 30px rgba(23, 21, 21, .35)); } to { opacity: 1; transform: scale(1); } }
+@keyframes logoIn { from { opacity: 0; transform: translateY(.6rem) scale(.96); } to { opacity: 1; transform: none; } }
 @keyframes lineUp { from { transform: translateY(105%); } to { transform: translateY(0); } }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(1rem); } to { opacity: 1; transform: none; } }
 @keyframes cue { 0% { transform: translateY(-100%); } 100% { transform: translateY(260%); } }
@@ -809,18 +808,14 @@ body.menu-open .site-menu__aside { opacity: 1; transition-delay: .45s; }
 
 .riflessi {
   display: grid;
-  gap: clamp(5rem, 13vw, 11rem);
+  gap: clamp(2rem, 6vw, 3rem);
   padding: var(--space) var(--gutter);
   overflow: hidden;
   overflow: clip;
 }
-.riflesso {
-  display: grid;
-  gap: 2rem;
-  align-items: center;
-}
-.riflesso__photo { width: 86%; will-change: transform, opacity; }
-.riflesso--right .riflesso__photo { justify-self: end; }
+/* le foto originali sono ritagliate: mai più larghe del ritaglio reale (circa 560 e 610 px) */
+.riflesso__photo { margin: 0; width: 100%; max-width: 35rem; will-change: transform, opacity; }
+.riflesso__photo--medium { justify-self: end; max-width: 30rem; margin-top: clamp(1rem, 6vw, 3rem); }
 .riflesso__text {
   margin: 0;
   max-width: 14ch;
@@ -831,15 +826,38 @@ body.menu-open .site-menu__aside { opacity: 1; transition-delay: .45s; }
   letter-spacing: -.02em;
   will-change: transform;
 }
-.riflesso--right .riflesso__text { justify-self: end; text-align: right; }
+.riflesso__text--second { justify-self: end; text-align: right; }
+.riflessi__quote {
+  margin: clamp(3rem, 10vw, 6rem) 0 0;
+  justify-self: center;
+  max-width: 18ch;
+  text-align: center;
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 1.2rem + 5vw, 6.2rem);
+  line-height: 1.02;
+  letter-spacing: -.025em;
+  will-change: transform;
+}
+.riflessi__quote p { margin: 0; }
+.frame--portrait { aspect-ratio: 2 / 3; }
 
+/* computer: una foto grande e una media, sfalsate in altezza, frasi negli spazi vuoti */
 @media (min-width: 900px) {
-  .riflesso { grid-template-columns: 6fr 5fr; gap: clamp(3rem, 7vw, 7rem); }
-  .riflesso__photo { width: 100%; max-width: 36rem; }
-  .riflesso--right { grid-template-columns: 5fr 6fr; }
-  .riflesso--right .riflesso__photo { grid-column: 2; grid-row: 1; justify-self: start; }
-  .riflesso--right .riflesso__text { grid-column: 1; grid-row: 1; }
-  .riflesso:nth-child(3) .riflesso__photo { justify-self: end; }
+  .riflessi {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-areas:
+      "big  big  big  big  big  big  .    first first first first first"
+      "big  big  big  big  big  big  .    med   med   med   med   ."
+      "sec  sec  sec  sec  sec  sec  .    med   med   med   med   ."
+      "quote quote quote quote quote quote quote quote quote quote quote quote";
+    column-gap: clamp(1rem, 2vw, 2rem);
+    row-gap: 0;
+  }
+  .riflesso__photo--big { grid-area: big; justify-self: start; }
+  .riflesso__text--first { grid-area: first; align-self: start; padding-top: clamp(2rem, 6vw, 6rem); }
+  .riflesso__photo--medium { grid-area: med; justify-self: stretch; margin-top: clamp(4rem, 9vw, 9rem); }
+  .riflesso__text--second { grid-area: sec; justify-self: start; text-align: left; align-self: start; padding-top: clamp(3rem, 6vw, 5rem); }
+  .riflessi__quote { grid-area: quote; margin-top: clamp(5rem, 10vw, 9rem); }
 }
 
 /* ---------- Catalogo: vetrine ---------- */
@@ -1491,7 +1509,7 @@ body.menu-open .site-menu__aside { opacity: 1; transition-delay: .45s; }
   }
   .js .reveal, .js .reveal-title .line > span { opacity: 1; transform: none; }
   .scroll-cue__dot { animation: none; transform: translateY(80%); }
-  .riflesso__photo, .riflesso__text { transform: none !important; opacity: 1 !important; }
+  .riflesso__photo, .riflesso__text, .riflessi__quote { transform: none !important; opacity: 1 !important; }
   .mondo__media, .mondo__text { transform: none !important; }
   .js .mondo__line, .js .mondo__prose { opacity: 1; transform: none; }
   .product { opacity: 1; }

@@ -77,7 +77,7 @@
       <div class="hero__blend" aria-hidden="true"></div>
 
       <div class="hero__content" data-parallax-content>
-        <img class="hero__logo" src="img/logo-bianco.png" alt="REFLÈ" width="1184" height="1375">
+        <img class="hero__logo" src="img/logo-bianco.png" alt="REFLÈ" width="1184" height="1375" fetchpriority="high" decoding="sync">
         <div class="hero__bottom">
           <h1 class="hero__title" id="hero-title">L’abito giusto chiama il tuo nome</h1>
           <div class="hero__actions">
@@ -98,32 +98,23 @@
 
     <!-- ============ RIFLESSI (sezione scenografica) ============ -->
     <section class="riflessi" id="riflessi" aria-label="Riflessi">
-      <article class="riflesso" data-slide="left">
-        <figure class="riflesso__photo" data-slide-photo>
-          <div class="frame frame--tall" style="--x: 100%; --y: 15.5%; --z: 1.91">
-            <img data-slide-img src="img/abito-specchio.jpg" alt="Una cliente in abito lungo fucsia si riflette nello specchio del camerino." width="1080" height="1350" loading="lazy" decoding="async">
-          </div>
-        </figure>
-        <p class="riflesso__text" data-slide-text>Ogni donna ha una storia da raccontare.</p>
-      </article>
+      <figure class="riflesso__photo riflesso__photo--big" data-slide="left">
+        <div class="frame frame--portrait" style="--x: 100%; --y: 15.7%; --z: 1.607">
+          <img src="img/abito-specchio.jpg" alt="Una cliente in abito lungo fucsia si riflette nello specchio del camerino." width="1080" height="1350" loading="lazy" decoding="async">
+        </div>
+      </figure>
+      <p class="riflesso__text riflesso__text--first" data-slide-text>Ogni donna ha una storia da raccontare.</p>
 
-      <article class="riflesso riflesso--right" data-slide="right">
-        <figure class="riflesso__photo" data-slide-photo>
-          <div class="frame frame--tall" style="--x: 100%; --y: 57%; --z: 1.75">
-            <img data-slide-img src="img/negozio-stender.jpg" alt="Una ragazza sceglie un capo tra gli appendiabiti del negozio." width="1080" height="1350" loading="lazy" decoding="async">
-          </div>
-        </figure>
-        <p class="riflesso__text" data-slide-text>Il tuo stile è il modo in cui scegli di farlo.</p>
-      </article>
+      <figure class="riflesso__photo riflesso__photo--medium" data-slide="right">
+        <div class="frame frame--tall" style="--x: 100%; --y: 57%; --z: 1.75">
+          <img src="img/negozio-stender.jpg" alt="Una ragazza sceglie un capo tra gli appendiabiti del negozio." width="1080" height="1350" loading="lazy" decoding="async">
+        </div>
+      </figure>
+      <p class="riflesso__text riflesso__text--second" data-slide-text>Il tuo stile è il modo in cui scegli di farlo.</p>
 
-      <article class="riflesso" data-slide="left">
-        <figure class="riflesso__photo" data-slide-photo>
-          <div class="frame frame--tall" style="--x: 33.3%; --y: 33.3%; --z: 1.6">
-            <img data-slide-img src="img/nuove/negozio-salottino-divano-rosa.jpg" alt="Il salottino del negozio: specchio ad arco, tende chiare e il divano rosa." width="1200" height="1200" loading="lazy" decoding="async">
-          </div>
-        </figure>
-        <p class="riflesso__text" data-slide-text>Il tuo stile. La tua storia. Reflè.</p>
-      </article>
+      <blockquote class="riflessi__quote" data-slide-text>
+        <p>Il tuo stile. La tua storia. Reflè.</p>
+      </blockquote>
     </section>
 
     <!-- ============ CATALOGO ============ -->

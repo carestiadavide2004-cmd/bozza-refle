@@ -103,14 +103,11 @@
      ========================================================= */
 
   var heroContent = $('[data-parallax-content]');
+  // Riflessi: le foto entrano dai lati, le frasi salgono con un leggero scarto
   var slides = $$('[data-slide]').map(function (node) {
-    return {
-      node: node,
-      dir: node.dataset.slide === 'left' ? -1 : 1,
-      photo: $('[data-slide-photo]', node),
-      text: $('[data-slide-text]', node)
-    };
+    return { node: node, dir: node.dataset.slide === 'left' ? -1 : 1 };
   });
+  var slideTexts = $$('[data-slide-text]');
 
   var mondo = $('#mondo');
   var mondoMedia = $('.mondo__media', mondo);
@@ -130,20 +127,28 @@
       heroContent.style.opacity = String(clamp(1 - y / (vh * 0.7), 0, 1));
     }
 
+    function progress(r) {
+      // 0 quando l'elemento entra dal basso, 1 quando è ben dentro lo schermo
+      return clamp((vh - r.top) / (vh * (small ? 0.6 : 0.75)), 0, 1);
+    }
+
     slides.forEach(function (s) {
       var r = s.node.getBoundingClientRect();
       if (r.bottom < -200 || r.top > vh + 200) return;
-      // 0 quando la riga entra dal basso, 1 quando è ben dentro lo schermo
-      var p = clamp((vh - r.top) / (vh * (small ? 0.6 : 0.75)), 0, 1);
-      var e = 1 - Math.pow(1 - p, 3);
+      var e = 1 - Math.pow(1 - progress(r), 3);
       var distance = small ? vw * 0.14 : vw * 0.22;
-      s.photo.style.transform = 'translate3d(' + ((1 - e) * s.dir * distance).toFixed(1) + 'px,0,0)';
-      s.photo.style.opacity = e.toFixed(3);
+      s.node.style.transform = 'translate3d(' + ((1 - e) * s.dir * distance).toFixed(1) + 'px,0,0)';
+      s.node.style.opacity = e.toFixed(3);
+    });
 
+    slideTexts.forEach(function (t) {
+      var r = t.getBoundingClientRect();
+      if (r.bottom < -200 || r.top > vh + 200) return;
+      var e = 1 - Math.pow(1 - progress(r), 3);
       var drift = (r.top + r.height / 2 - vh / 2) * (small ? -0.05 : -0.12);
-      var t = clamp(e * 1.25 - 0.25, 0, 1);
-      s.text.style.transform = 'translate3d(0,' + (drift + (1 - t) * 40).toFixed(1) + 'px,0)';
-      s.text.style.opacity = t.toFixed(3);
+      var k = clamp(e * 1.25 - 0.25, 0, 1);
+      t.style.transform = 'translate3d(0,' + (drift + (1 - k) * 40).toFixed(1) + 'px,0)';
+      t.style.opacity = k.toFixed(3);
     });
 
     // Il mondo Reflè: la foto scorre più lenta del testo
@@ -158,10 +163,8 @@
 
   function clearMotion() {
     heroContent.style.transform = heroContent.style.opacity = '';
-    slides.forEach(function (s) {
-      s.photo.style.transform = s.photo.style.opacity = '';
-      s.text.style.transform = s.text.style.opacity = '';
-    });
+    slides.forEach(function (s) { s.node.style.transform = s.node.style.opacity = ''; });
+    slideTexts.forEach(function (t) { t.style.transform = t.style.opacity = ''; });
     mondoMedia.style.transform = mondoText.style.transform = '';
   }
 
